@@ -1,31 +1,32 @@
-GRC=`which grc`
+GRC=$(which grc)
+as() { command $GRC -es --colour=auto as "$@"; }
 configure() { command $GRC -es --colour=auto configure "$@"; }
-diff() { command $GRC -es --colour=auto diff "$@"; }
-make() { command $GRC -es --colour=auto make "$@"; }
+cvs() { command $GRC -es --colour=auto cvs "$@"; }
+df() { command $GRC -es --colour=auto df "$@"; }
+if type diff &> /dev/null; then
+    diff() { command $GRC -es --colour=auto diff "$@"; }
+fi
+dig() { command $GRC -es --colour=auto dig "$@"; }
+if type esperanto &> /dev/null; then
+    esperanto() { command $GRC -es --colour=auto esperanto "$@"; }
+fi
+gas() { command $GRC -es --colour=auto gas "$@"; }
 gcc() { command $GRC -es --colour=auto gcc "$@"; }
 git() { command $GRC -es --colour=auto git "$@"; }
-as() { command $GRC -es --colour=auto as "$@"; }
-gas() { command $GRC -es --colour=auto gas "$@"; }
+ifconfig() { command $GRC -es --colour=auto ifconfig "$@"; }
+irclog() { command $GRC -es --colour=auto irclog "$@"; }
 ld() { command $GRC -es --colour=auto ld "$@"; }
+ldap() { command $GRC -es --colour=auto ldap "$@"; }
+log() { command $GRC -es --colour=auto log "$@"; }
+ls() { command $GRC -es --colour=auto ls "$@"; }
+make() { command $GRC -es --colour=auto make "$@"; }
+mount() { command $GRC -es --colour=auto mount "$@"; }
+mount2() { command $GRC -es --colour=auto mount2 "$@"; }
+mtr() { command $GRC -es --colour=auto mtr "$@"; }
 netstat() { command $GRC -es --colour=auto netstat "$@"; }
+php() { command $GRC -es --colour=auto php "$@"; }
 ping() { command $GRC -es --colour=auto ping "$@"; }
+proftpd() { command $GRC -es --colour=auto proftpd "$@"; }
+ps() { command $GRC -es --colour=auto ps "$@"; }
 traceroute() { command $GRC -es --colour=auto traceroute "$@"; }
-
-
-
-# GRC=`which grc`
-# if [ "$TERM" != dumb ] && [ -n GRC ]
-# then
-#     alias colourify="$GRC -es --colour=auto"
-#     alias configure='colourify ./configure'
-#     alias diff='colourify diff'
-#     alias make='colourify make'
-#     alias gcc='colourify gcc'
-#     alias g++='colourify g++'
-#     alias as='colourify as'
-#     alias gas='colourify gas'
-#     alias ld='colourify ld'
-#     alias netstat='colourify netstat'
-#     alias ping='colourify ping'
-#     alias traceroute='colourify /usr/sbin/traceroute'
-# fi
+wdiff() { command $GRC -es --colour=auto wdiff "$@"; }
